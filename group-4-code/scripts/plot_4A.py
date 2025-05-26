@@ -8,8 +8,8 @@ def run_matrix_96():
         "matrix",
         "test_matrix_96_output",
         data,
-        minimum_signatures=3,
-        maximum_signatures=3,
+        minimum_signatures=5,
+        maximum_signatures=5,
         nmf_replicates=5,
         min_nmf_iterations=100,
         max_nmf_iterations=1000,
@@ -19,6 +19,6 @@ def run_matrix_96():
 
 if __name__ == "__main__":
     run_matrix_96()
-    src_path = "../../test_matrix_96_output/SBS96/All_Solutions/SBS96_3_Signatures/Signatures/Signature_plot/SBS_96_plots_S3.pdf"
+    src_path = "../../test_matrix_96_output/SBS96/All_Solutions/SBS96_5_Signatures/Signatures/Signature_plot/SBS_96_plots_S5.pdf"
     dst_path = "../figures/figure_4A.pdf"
     shutil.copyfile(src_path, dst_path)

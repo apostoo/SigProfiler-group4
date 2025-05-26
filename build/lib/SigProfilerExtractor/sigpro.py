@@ -53,7 +53,7 @@ import SigProfilerAssignment as spa
 from SigProfilerAssignment import single_sample as spasub
 from SigProfilerAssignment import decomposition as decomp
 from numpy.random import SeedSequence
-from sigProfilerPlotting import sigProfilerPlotting as sigPlot
+from sigProfilerPlotting import sigProfilerPlotting_edited as sigPlot
 
 MUTTYPE = "MutationType"
 
