@@ -66,7 +66,7 @@ def get_csv_values(file):
         for row in reader:
             signatures.append(int(row[0][:-1]))
             stability.append(float(row[1]))
-            frobenius.append(float(row[9])/10)
+            frobenius.append(float(row[6][:-1])/100)
         
     return (signatures, stability, frobenius)
 
