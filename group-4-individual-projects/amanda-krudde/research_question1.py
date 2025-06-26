@@ -10,7 +10,7 @@ from mpl_toolkits.mplot3d import Axes3D
 current_fig = "matrix_96"
 # Dataset options: SBS96 or DBS78
 dataset = "SBS96"
-create_screeplot = True
+create_screeplot = False
 
 solution_path_samples = "../../test_" + current_fig + "_output/" + dataset + "/Samples.txt"
 sample_matrix = pd.read_csv(solution_path_samples, sep="\t", index_col=0)
@@ -90,6 +90,8 @@ def plot_pca_coloured(pca_df, name):
     plt.xlabel('Principal Component 1')
     plt.ylabel('Principal Component 2')
     plt.grid(True)
+    handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_map[key], markersize=10, label=key) for key in color_map]
+    plt.legend(handles=handles, title='Mutation Class', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq1/pca_mutationtype_{name}_coloured.png")
     plt.show()
@@ -128,6 +130,8 @@ def plot_pca_coloured_double(pca_df, name):
     plt.xlabel('Principal Component 1')
     plt.ylabel('Principal Component 2')
     plt.grid(True)
+    handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_map[key], markersize=10, label=key) for key in color_map]
+    plt.legend(handles=handles, title='Mutation Class', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq1/pca_mutationtype_{name}_coloured.png")
     plt.show()
@@ -175,6 +179,8 @@ def plot_umap_coloured(umap_df, name):
     plt.xlabel('UMAP1')
     plt.ylabel('UMAP2')
     plt.grid(True)
+    handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_map[key], markersize=10, label=key) for key in color_map]
+    plt.legend(handles=handles, title='Mutation Class', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq1/umap_mutationtype_{name}_coloured.png")
     plt.show()
@@ -213,6 +219,8 @@ def plot_umap_coloured_double(umap_df, name):
     plt.xlabel('UMAP1')
     plt.ylabel('UMAP2')
     plt.grid(True)
+    handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_map[key], markersize=10, label=key) for key in color_map]
+    plt.legend(handles=handles, title='Mutation Class', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq1/umap_mutationtype_{name}_coloured.png")
     plt.show()
@@ -280,20 +288,10 @@ if dataset == "SBS96" and not create_screeplot:
     plot_umap_coloured(umap_df, current_fig)
 
 if dataset == "DBS78" and not create_screeplot:
-    # plot_pca(pca_df, current_fig)
-    # plot_pca_coloured_double(pca_df, current_fig)
-    # plot_umap(umap_df, current_fig)
+    plot_pca(pca_df, current_fig)
+    plot_pca_coloured_double(pca_df, current_fig)
+    plot_umap(umap_df, current_fig)
     plot_umap_coloured_double(umap_df, current_fig)
-
-    # find the two clusters in the UMAP plot
-    # and print the mutation types in each cluster
-    cluster_1 = umap_df[umap_df['UMAP1'] < -1]
-    cluster_2 = umap_df[umap_df['UMAP1'] >= -1]
-    print("\nCluster 1 Mutation Types:")
-    print(cluster_1.index.tolist())
-    print("\nCluster 2 Mutation Types:")
-    print(cluster_2.index.tolist())
-
 
 if create_screeplot:
     # Print the eigenvalues for each principal component
