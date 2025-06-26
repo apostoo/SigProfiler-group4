@@ -1,0 +1,79 @@
+THIS FILE CONTAINS THE METADATA ABOUT SYSTEM AND RUNTIME
+
+
+-------System Info-------
+Operating System Name: Windows
+Nodename: AMANDA
+Release: 11
+Version: 10.0.26100
+
+-------Python and Package Versions------- 
+Python Version: 3.12.10
+SigProfilerExtractor Version: 1.2.0
+SigProfilerPlotting Version: 1.4.1
+SigProfilerMatrixGenerator Version: 1.3.3
+SigProfilerAssignment Version: 0.2.0
+Pandas version: 2.2.3
+Numpy version: 2.2.5
+Scipy version: 1.15.2
+Scikit-learn version: 1.6.1
+
+--------------EXECUTION PARAMETERS--------------
+INPUT DATA
+	input_type: matrix
+	output: test_matrix_78_output
+	input_data: C:\Users\amand\OneDrive\Documenten\TU Delft\Jaar 6\Quarter 4\Machine Learning in Bioinformatics\repo\SigProfiler-group4\SigProfilerExtractor/data/TextInput/Samples_DBS.txt
+	reference_genome: GRCh37
+	context_types: DBS78
+	exome: False
+NMF REPLICATES
+	minimum_signatures: 4
+	maximum_signatures: 4
+	NMF_replicates: 5
+NMF ENGINE
+	NMF_init: random
+	precision: single
+	matrix_normalization: gmm
+	resample: True
+	seeds: random
+	min_NMF_iterations: 100
+	max_NMF_iterations: 1,000
+	NMF_test_conv: 100
+	NMF_tolerance: 1e-15
+CLUSTERING
+	clustering_distance: cosine
+EXECUTION
+	cpu: 8; Maximum number of CPU is 8
+	gpu: False
+Solution Estimation
+	stability: 0.8
+	min_stability: 0.2
+	combined_stability: 1.0
+	allow_stability_drop: False
+COSMIC MATCH
+	opportunity_genome: GRCh37
+	cosmic_version: 3.4
+	nnls_add_penalty: 0.05
+	nnls_remove_penalty: 0.01
+	initial_remove_penalty: 0.05
+	export_probabilities: True
+	collapse_to_SBS96: True
+
+-------Analysis Progress------- 
+[2025-06-22 15:16:35] Analysis started: 
+
+##################################
+
+[2025-06-22 15:16:36] Analysis started for DBS78. Matrix size [78 rows x 6 columns]
+
+[2025-06-22 15:16:36] Normalization GMM with cutoff value set at 7800
+
+[2025-06-22 15:17:54] DBS78 de novo extraction completed for a total of 4 signatures! 
+Execution time:0:01:18
+
+[2025-06-22 15:18:34] Analysis ended: 
+
+-------Job Status------- 
+Analysis of mutational signatures completed successfully! 
+Total execution time: 0:01:58 
+Results can be found in:  test_matrix_78_output  folder
