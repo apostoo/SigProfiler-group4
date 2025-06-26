@@ -9,9 +9,9 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
 # Current fig options: matrix_96 or matrix_78
-current_fig = "matrix_78"
+current_fig = "matrix_96"
 # Dataset options: SBS96 or DBS78
-dataset = "DBS78"
+dataset = "SBS96"
 signature_count = 4
 create_screeplot = False
 
@@ -117,6 +117,15 @@ def plot_pca_exposure(pca_df, name):
     plt.xlabel('Principal Component 1')
     plt.ylabel('Principal Component 2')
     plt.grid(True)
+    if dataset == "SBS96":
+        legend_sigs = ['SBS96A', 'SBS96B', 'SBS96C', 'SBS96D']
+    else:
+        legend_sigs = ['DBS78A', 'DBS78B', 'DBS78C', 'DBS78D']
+
+    handles = [plt.Line2D([0], [0], marker='o', color='w',
+                          markerfacecolor=color_map[sig], markersize=10)
+               for sig in legend_sigs]
+    plt.legend(handles, legend_sigs, title='Dominant Signature', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq2/pca_exposures_{name}.png")
     plt.show()
@@ -161,6 +170,14 @@ def plot_umap_exposure(umap_df, name):
     plt.xlabel('UMAP1')
     plt.ylabel('UMAP2')
     plt.grid(True)
+    if dataset == "SBS96":
+        legend_sigs = ['SBS96A', 'SBS96B', 'SBS96C', 'SBS96D']
+    else:
+        legend_sigs = ['DBS78A', 'DBS78B', 'DBS78C', 'DBS78D']
+    handles = [plt.Line2D([0], [0], marker='o', color='w',
+                          markerfacecolor=color_map[sig], markersize=10)
+               for sig in legend_sigs]
+    plt.legend(handles, legend_sigs, title='Dominant Signature', loc='upper right')
     plt.tight_layout()
     plt.savefig(f"figures/rq2/umap_exposures_{name}.png")
     plt.show()
@@ -188,7 +205,6 @@ def create_scree_plot_ratio(pca, name):
     plt.tight_layout()
     plt.savefig(f"figures/rq2/screeplot_ratio_exposure_{name}.png")
     plt.show()
-
 
 if (dataset == "SBS96" or dataset == "DBS78") and not create_screeplot:
     plot_pca(pca_df, current_fig)
