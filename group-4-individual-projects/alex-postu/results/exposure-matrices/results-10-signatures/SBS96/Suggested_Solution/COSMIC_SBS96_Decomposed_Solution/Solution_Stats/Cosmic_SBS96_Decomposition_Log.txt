@@ -1,0 +1,267 @@
+############################ Signature Decomposition Details ################################
+
+
+Context Type: 96
+Genome Build: GRCh37
+The following signatures are excluded: 
+
+
+
+######################## Decomposing SBS96A ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS13']
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS2', 'SBS13']
+L2 Error % 0.22
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS2', 'SBS13']
+L2 Error % 0.22
+Cosine Similarity 0.97
+
+#################### Final Composition #################################
+['SBS1', 'SBS2', 'SBS13']
+L2 Error % 0.22
+Cosine Similarity 0.97
+
+
+
+
+######################## Decomposing SBS96B ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS2', 'SBS5']
+L2 Error % 0.2
+Cosine Similarity 0.98
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS2']
+L2 Error % 0.2
+Cosine Similarity 0.98
+
+#################### Final Composition #################################
+['SBS1', 'SBS2']
+L2 Error % 0.2
+Cosine Similarity 0.98
+
+
+
+
+######################## Decomposing SBS96C ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS6']
+L2 Error % 0.29
+Cosine Similarity 0.96
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS6']
+L2 Error % 0.29
+Cosine Similarity 0.96
+
+#################### Final Composition #################################
+['SBS1', 'SBS6']
+L2 Error % 0.29
+Cosine Similarity 0.96
+
+
+
+
+######################## Decomposing SBS96D ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS58']
+L2 Error % 0.63
+Cosine Similarity 0.78
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS10b', 'SBS58']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS10b', 'SBS58']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+#################### Final Composition #################################
+['SBS10b', 'SBS58']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+
+
+
+######################## Decomposing SBS96E ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS42']
+L2 Error % 0.68
+Cosine Similarity 0.74
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS13', 'SBS42']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS13', 'SBS42']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+#################### Final Composition #################################
+['SBS1', 'SBS5', 'SBS13', 'SBS42']
+L2 Error % 0.56
+Cosine Similarity 0.83
+
+
+
+
+######################## Decomposing SBS96F ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS26']
+L2 Error % 0.52
+Cosine Similarity 0.86
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS26', 'SBS44']
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS26', 'SBS44']
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+#################### Final Composition #################################
+['SBS1', 'SBS26', 'SBS44']
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+
+
+
+######################## Decomposing SBS96G ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS5', 'SBS39']
+L2 Error % 0.59
+Cosine Similarity 0.81
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS5', 'SBS39']
+L2 Error % 0.59
+Cosine Similarity 0.81
+
+#################### Final Composition #################################
+['SBS5', 'SBS39']
+L2 Error % 0.59
+Cosine Similarity 0.81
+
+
+
+
+######################## Decomposing SBS96H ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5']
+L2 Error % 0.57
+Cosine Similarity 0.82
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5']
+L2 Error % 0.57
+Cosine Similarity 0.82
+
+#################### Final Composition #################################
+['SBS1', 'SBS5']
+L2 Error % 0.57
+Cosine Similarity 0.82
+
+
+
+
+######################## Decomposing SBS96I ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS10b']
+L2 Error % 0.59
+Cosine Similarity 0.8
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS5', 'SBS7a', 'SBS10b']
+L2 Error % 0.48
+Cosine Similarity 0.88
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS7a', 'SBS7b', 'SBS10b']
+L2 Error % 0.47
+Cosine Similarity 0.88
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 3 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS1', 'SBS7a', 'SBS7b', 'SBS10b']
+L2 Error % 0.47
+Cosine Similarity 0.88
+
+#################### Final Composition #################################
+['SBS1', 'SBS7a', 'SBS7b', 'SBS10b']
+L2 Error % 0.47
+Cosine Similarity 0.88
+
+
+
+
+######################## Decomposing SBS96J ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS5', 'SBS18']
+L2 Error % 0.44
+Cosine Similarity 0.9
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS3', 'SBS18']
+L2 Error % 0.38
+Cosine Similarity 0.92
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition ['SBS3', 'SBS18']
+L2 Error % 0.38
+Cosine Similarity 0.92
+
+#################### Final Composition #################################
+['SBS3', 'SBS18']
+L2 Error % 0.38
+Cosine Similarity 0.92

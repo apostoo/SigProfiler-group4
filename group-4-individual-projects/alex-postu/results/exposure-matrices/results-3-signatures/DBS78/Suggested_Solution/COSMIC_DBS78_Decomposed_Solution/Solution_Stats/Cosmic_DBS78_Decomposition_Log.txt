@@ -1,0 +1,95 @@
+############################ Signature Decomposition Details ################################
+
+
+Context Type: 78
+Genome Build: GRCh37
+The following signatures are excluded: 
+
+
+
+######################## Decomposing DBS78A ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.64
+Cosine Similarity 0.77
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0, 12]
+L2 Error % 0.51
+Cosine Similarity 0.86
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0, 12]
+L2 Error % 0.51
+Cosine Similarity 0.86
+
+#################### Final Composition #################################
+[0, 12]
+L2 Error % 0.51
+Cosine Similarity 0.86
+
+
+
+
+######################## Decomposing DBS78B ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1]
+L2 Error % 0.63
+Cosine Similarity 0.78
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1, 12]
+L2 Error % 0.47
+Cosine Similarity 0.88
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1, 12, 19]
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 3 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1, 12, 19]
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+#################### Final Composition #################################
+[1, 12, 19]
+L2 Error % 0.42
+Cosine Similarity 0.91
+
+
+
+
+######################## Decomposing DBS78C ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.73
+Cosine Similarity 0.69
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3, 17]
+L2 Error % 0.67
+Cosine Similarity 0.75
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3, 17]
+L2 Error % 0.67
+Cosine Similarity 0.75
+
+#################### Final Composition #################################
+[3, 17]
+L2 Error % 0.67
+Cosine Similarity 0.75

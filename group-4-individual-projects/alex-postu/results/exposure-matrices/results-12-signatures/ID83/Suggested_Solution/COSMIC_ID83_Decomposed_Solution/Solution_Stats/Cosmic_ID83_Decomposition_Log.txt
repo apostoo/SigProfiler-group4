@@ -1,0 +1,287 @@
+############################ Signature Decomposition Details ################################
+
+
+Context Type: 83
+Genome Build: GRCh37
+The following signatures are excluded: 
+
+
+
+######################## Decomposing ID83A ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [14]
+L2 Error % 0.81
+Cosine Similarity 0.59
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [6, 14]
+L2 Error % 0.75
+Cosine Similarity 0.66
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [6, 14]
+L2 Error % 0.75
+Cosine Similarity 0.66
+
+#################### Final Composition #################################
+[6, 14]
+L2 Error % 0.75
+Cosine Similarity 0.66
+
+
+
+
+######################## Decomposing ID83B ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+#################### Final Composition #################################
+[17]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+
+
+
+######################## Decomposing ID83C ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [4]
+L2 Error % 0.82
+Cosine Similarity 0.58
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [4]
+L2 Error % 0.82
+Cosine Similarity 0.58
+
+#################### Final Composition #################################
+[4]
+L2 Error % 0.82
+Cosine Similarity 0.58
+
+
+
+
+######################## Decomposing ID83D ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+#################### Final Composition #################################
+[2]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+
+
+
+######################## Decomposing ID83E ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.76
+Cosine Similarity 0.65
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.76
+Cosine Similarity 0.65
+
+#################### Final Composition #################################
+[2]
+L2 Error % 0.76
+Cosine Similarity 0.65
+
+
+
+
+######################## Decomposing ID83F ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1]
+L2 Error % 0.4
+Cosine Similarity 0.92
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1, 6]
+L2 Error % 0.23
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1, 6]
+L2 Error % 0.23
+Cosine Similarity 0.97
+
+#################### Final Composition #################################
+[1, 6]
+L2 Error % 0.23
+Cosine Similarity 0.97
+
+
+
+
+######################## Decomposing ID83G ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+#################### Final Composition #################################
+[12]
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+
+
+
+######################## Decomposing ID83H ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+#################### Final Composition #################################
+[7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+
+
+
+######################## Decomposing ID83I ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+#################### Final Composition #################################
+[3]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+
+
+######################## Decomposing ID83J ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+#################### Final Composition #################################
+[7]
+L2 Error % 0.69
+Cosine Similarity 0.73
+
+
+
+
+######################## Decomposing ID83K ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [15]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [15]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+#################### Final Composition #################################
+[15]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+
+
+######################## Decomposing ID83L ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0]
+L2 Error % 0.43
+Cosine Similarity 0.9
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0, 10]
+L2 Error % 0.33
+Cosine Similarity 0.95
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0, 10]
+L2 Error % 0.33
+Cosine Similarity 0.95
+
+#################### Final Composition #################################
+[0, 10]
+L2 Error % 0.33
+Cosine Similarity 0.95

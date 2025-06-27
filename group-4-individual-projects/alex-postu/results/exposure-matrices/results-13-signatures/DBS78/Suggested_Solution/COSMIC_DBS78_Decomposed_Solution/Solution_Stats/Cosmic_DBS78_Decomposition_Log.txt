@@ -1,0 +1,303 @@
+############################ Signature Decomposition Details ################################
+
+
+Context Type: 78
+Genome Build: GRCh37
+The following signatures are excluded: 
+
+
+
+######################## Decomposing DBS78A ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [18]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [18]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+#################### Final Composition #################################
+[18]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+
+
+
+######################## Decomposing DBS78B ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.77
+Cosine Similarity 0.64
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.77
+Cosine Similarity 0.64
+
+#################### Final Composition #################################
+[3]
+L2 Error % 0.77
+Cosine Similarity 0.64
+
+
+
+
+######################## Decomposing DBS78C ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [5]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [5]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+#################### Final Composition #################################
+[5]
+L2 Error % 0.94
+Cosine Similarity 0.35
+
+
+
+
+######################## Decomposing DBS78D ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+#################### Final Composition #################################
+[12]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+
+
+
+######################## Decomposing DBS78E ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1]
+L2 Error % 0.17
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [1]
+L2 Error % 0.17
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[1]
+L2 Error % 0.17
+Cosine Similarity 0.99
+
+
+
+
+######################## Decomposing DBS78F ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [8]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [8, 14]
+L2 Error % 0.74
+Cosine Similarity 0.67
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [8, 14]
+L2 Error % 0.74
+Cosine Similarity 0.67
+
+#################### Final Composition #################################
+[8, 14]
+L2 Error % 0.74
+Cosine Similarity 0.67
+
+
+
+
+######################## Decomposing DBS78G ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [8]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [8]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+#################### Final Composition #################################
+[8]
+L2 Error % 0.96
+Cosine Similarity 0.29
+
+
+
+
+######################## Decomposing DBS78H ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.94
+Cosine Similarity 0.33
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.94
+Cosine Similarity 0.33
+
+#################### Final Composition #################################
+[17]
+L2 Error % 0.94
+Cosine Similarity 0.33
+
+
+
+
+######################## Decomposing DBS78I ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3]
+L2 Error % 0.67
+Cosine Similarity 0.74
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3, 19]
+L2 Error % 0.61
+Cosine Similarity 0.79
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 2 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [3, 19]
+L2 Error % 0.61
+Cosine Similarity 0.79
+
+#################### Final Composition #################################
+[3, 19]
+L2 Error % 0.61
+Cosine Similarity 0.79
+
+
+
+
+######################## Decomposing DBS78J ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [0]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[0]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+
+
+
+######################## Decomposing DBS78K ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.78
+Cosine Similarity 0.62
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [17]
+L2 Error % 0.78
+Cosine Similarity 0.62
+
+#################### Final Composition #################################
+[17]
+L2 Error % 0.78
+Cosine Similarity 0.62
+
+
+
+
+######################## Decomposing DBS78L ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.93
+Cosine Similarity 0.37
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [12]
+L2 Error % 0.93
+Cosine Similarity 0.37
+
+#################### Final Composition #################################
+[12]
+L2 Error % 0.93
+Cosine Similarity 0.37
+
+
+
+
+######################## Decomposing DBS78M ########################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.94
+Cosine Similarity 0.33
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [2]
+L2 Error % 0.94
+Cosine Similarity 0.33
+
+#################### Final Composition #################################
+[2]
+L2 Error % 0.94
+Cosine Similarity 0.33

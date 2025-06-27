@@ -1,0 +1,3 @@
+Catalog,Signatures,n_neighbors_or_components,min_dist,min_cluster_size,noise_percent
+SBS96,6,15,0.7,15,7.71
+SBS96,6,15,0.7,15,42.1
