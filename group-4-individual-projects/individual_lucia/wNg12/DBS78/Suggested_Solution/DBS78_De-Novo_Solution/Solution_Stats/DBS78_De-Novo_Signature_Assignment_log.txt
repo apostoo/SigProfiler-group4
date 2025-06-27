@@ -1,0 +1,840 @@
+
+
+
+
+
+                    ################ Sample 1 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78D  DBS78H  DBS78L
+0     1.0     1.0     5.0     3.0
+L2 Error %: 0.69
+Cosine Similarity: 0.72
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78D  DBS78H  DBS78L
+0     1.0     1.0     5.0     3.0
+L2 Error %: 0.69
+Cosine Similarity: 0.72
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78H'), np.str_('DBS78L')]
+L2 Error % 0.7
+Cosine Similarity 0.72
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78H'), np.str_('DBS78L')]
+L2 Error % 0.7
+Cosine Similarity 0.72
+
+#################### Final Composition #################################
+[np.str_('DBS78H'), np.str_('DBS78L')]
+L2 Error % 0.7
+Cosine Similarity 0.72
+####################################### Composition After Add-Remove #######################################
+   DBS78H  DBS78L
+0     7.0     3.0
+L2 Error %: 0.7
+Cosine Similarity: 0.72
+
+
+
+
+
+                    ################ Sample 2 #################
+############################# Initial Composition ####################################
+   DBS78E  DBS78K  DBS78L
+0    16.0     4.0    12.0
+L2 Error %: 0.52
+Cosine Similarity: 0.86
+############################## Composition After Initial Remove ###############################
+   DBS78E  DBS78K  DBS78L
+0    16.0     4.0    12.0
+L2 Error %: 0.52
+Cosine Similarity: 0.86
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78L')]
+L2 Error % 0.52
+Cosine Similarity 0.85
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78L')]
+L2 Error % 0.52
+Cosine Similarity 0.85
+
+#################### Final Composition #################################
+[np.str_('DBS78E'), np.str_('DBS78L')]
+L2 Error % 0.52
+Cosine Similarity 0.85
+####################################### Composition After Add-Remove #######################################
+   DBS78E  DBS78L
+0    19.0    13.0
+L2 Error %: 0.52
+Cosine Similarity: 0.85
+
+
+
+
+
+                    ################ Sample 3 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78B  DBS78C  DBS78D  DBS78E  DBS78G
+0     4.0    39.0     3.0     7.0     6.0     3.0
+L2 Error %: 0.25
+Cosine Similarity: 0.97
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78B  DBS78C  DBS78D  DBS78E  DBS78G
+0     4.0    39.0     3.0     7.0     6.0     3.0
+L2 Error %: 0.25
+Cosine Similarity: 0.97
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78D')]
+L2 Error % 0.26
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78D')]
+L2 Error % 0.26
+Cosine Similarity 0.97
+
+#################### Final Composition #################################
+[np.str_('DBS78B'), np.str_('DBS78D')]
+L2 Error % 0.26
+Cosine Similarity 0.97
+####################################### Composition After Add-Remove #######################################
+   DBS78B  DBS78D
+0    46.0    16.0
+L2 Error %: 0.26
+Cosine Similarity: 0.97
+
+
+
+
+
+                    ################ Sample 4 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78H  DBS78L
+0    14.0    16.0     1.0
+L2 Error %: 0.33
+Cosine Similarity: 0.94
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78H  DBS78L
+0    14.0    16.0     1.0
+L2 Error %: 0.33
+Cosine Similarity: 0.94
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78H')]
+L2 Error % 0.33
+Cosine Similarity 0.94
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78H')]
+L2 Error % 0.33
+Cosine Similarity 0.94
+
+#################### Final Composition #################################
+[np.str_('DBS78A'), np.str_('DBS78H')]
+L2 Error % 0.33
+Cosine Similarity 0.94
+####################################### Composition After Add-Remove #######################################
+   DBS78A  DBS78H
+0    14.0    17.0
+L2 Error %: 0.33
+Cosine Similarity: 0.94
+
+
+
+
+
+                    ################ Sample 5 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78B  DBS78F  DBS78H  DBS78J  DBS78K  DBS78L
+0    12.0    32.0    20.0    21.0     9.0    10.0     1.0
+L2 Error %: 0.28
+Cosine Similarity: 0.96
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78B  DBS78F  DBS78H  DBS78J  DBS78K  DBS78L
+0    12.0    32.0    20.0    21.0     9.0    10.0     1.0
+L2 Error %: 0.28
+Cosine Similarity: 0.96
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78F'), np.str_('DBS78H'), np.str_('DBS78K')]
+L2 Error % 0.29
+Cosine Similarity 0.96
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78F'), np.str_('DBS78H'), np.str_('DBS78K')]
+L2 Error % 0.29
+Cosine Similarity 0.96
+
+#################### Final Composition #################################
+[np.str_('DBS78B'), np.str_('DBS78F'), np.str_('DBS78H'), np.str_('DBS78K')]
+L2 Error % 0.29
+Cosine Similarity 0.96
+####################################### Composition After Add-Remove #######################################
+   DBS78B  DBS78F  DBS78H  DBS78K
+0    41.0    21.0    27.0    16.0
+L2 Error %: 0.29
+Cosine Similarity: 0.96
+
+
+
+
+
+                    ################ Sample 6 #################
+############################# Initial Composition ####################################
+   DBS78E  DBS78I  DBS78K
+0    15.0    10.0    23.0
+L2 Error %: 0.43
+Cosine Similarity: 0.9
+############################## Composition After Initial Remove ###############################
+   DBS78E  DBS78I  DBS78K
+0    15.0    10.0    23.0
+L2 Error %: 0.43
+Cosine Similarity: 0.9
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.43
+Cosine Similarity 0.9
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.43
+Cosine Similarity 0.9
+
+#################### Final Composition #################################
+[np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.43
+Cosine Similarity 0.9
+####################################### Composition After Add-Remove #######################################
+   DBS78E  DBS78I  DBS78K
+0    15.0    10.0    23.0
+L2 Error %: 0.43
+Cosine Similarity: 0.9
+
+
+
+
+
+                    ################ Sample 7 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78B  DBS78D  DBS78E  DBS78G  DBS78H
+0     9.0     6.0     3.0     6.0    27.0     8.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78B  DBS78D  DBS78E  DBS78G  DBS78H
+0     9.0     6.0     3.0     6.0    27.0     8.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78E'), np.str_('DBS78G'), np.str_('DBS78H')]
+L2 Error % 0.22
+Cosine Similarity 0.98
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78E'), np.str_('DBS78G'), np.str_('DBS78H')]
+L2 Error % 0.22
+Cosine Similarity 0.98
+
+#################### Final Composition #################################
+[np.str_('DBS78A'), np.str_('DBS78E'), np.str_('DBS78G'), np.str_('DBS78H')]
+L2 Error % 0.22
+Cosine Similarity 0.98
+####################################### Composition After Add-Remove #######################################
+   DBS78A  DBS78E  DBS78G  DBS78H
+0    13.0    10.0    27.0     9.0
+L2 Error %: 0.22
+Cosine Similarity: 0.98
+
+
+
+
+
+                    ################ Sample 8 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78D  DBS78I
+0     2.0     1.0     5.0
+L2 Error %: 0.8
+Cosine Similarity: 0.59
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78D  DBS78I
+0     2.0     1.0     5.0
+L2 Error %: 0.8
+Cosine Similarity: 0.59
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78D'), np.str_('DBS78I')]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78D'), np.str_('DBS78I')]
+L2 Error % 0.8
+Cosine Similarity 0.6
+
+#################### Final Composition #################################
+[np.str_('DBS78C'), np.str_('DBS78D'), np.str_('DBS78I')]
+L2 Error % 0.8
+Cosine Similarity 0.6
+####################################### Composition After Add-Remove #######################################
+   DBS78C  DBS78D  DBS78I
+0     2.0     2.0     4.0
+L2 Error %: 0.8
+Cosine Similarity: 0.6
+
+
+
+
+
+                    ################ Sample 9 #################
+############################# Initial Composition ####################################
+   DBS78H  DBS78I
+0     3.0     1.0
+L2 Error %: 0.59
+Cosine Similarity: 0.81
+############################## Composition After Initial Remove ###############################
+   DBS78H  DBS78I
+0     3.0     1.0
+L2 Error %: 0.59
+Cosine Similarity: 0.81
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78H'), np.str_('DBS78I')]
+L2 Error % 0.59
+Cosine Similarity 0.81
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78H'), np.str_('DBS78I')]
+L2 Error % 0.59
+Cosine Similarity 0.81
+
+#################### Final Composition #################################
+[np.str_('DBS78H'), np.str_('DBS78I')]
+L2 Error % 0.59
+Cosine Similarity 0.81
+####################################### Composition After Add-Remove #######################################
+   DBS78H  DBS78I
+0     3.0     1.0
+L2 Error %: 0.59
+Cosine Similarity: 0.81
+
+
+
+
+
+                    ################ Sample 10 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78I  DBS78J  DBS78L
+0     1.0     1.0     1.0     3.0
+L2 Error %: 0.78
+Cosine Similarity: 0.63
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78I  DBS78J  DBS78L
+0     1.0     1.0     1.0     3.0
+L2 Error %: 0.78
+Cosine Similarity: 0.63
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78I'), np.str_('DBS78J'), np.str_('DBS78L')]
+L2 Error % 0.78
+Cosine Similarity 0.63
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78I'), np.str_('DBS78J'), np.str_('DBS78L')]
+L2 Error % 0.78
+Cosine Similarity 0.63
+
+#################### Final Composition #################################
+[np.str_('DBS78C'), np.str_('DBS78I'), np.str_('DBS78J'), np.str_('DBS78L')]
+L2 Error % 0.78
+Cosine Similarity 0.63
+####################################### Composition After Add-Remove #######################################
+   DBS78C  DBS78I  DBS78J  DBS78L
+0     1.0     1.0     1.0     3.0
+L2 Error %: 0.78
+Cosine Similarity: 0.63
+
+
+
+
+
+                    ################ Sample 11 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78F  DBS78H  DBS78I  DBS78J  DBS78L
+0     1.0    12.0     1.0     6.0     2.0     2.0
+L2 Error %: 0.68
+Cosine Similarity: 0.73
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78F  DBS78H  DBS78I  DBS78J  DBS78L
+0     1.0    12.0     1.0     6.0     2.0     2.0
+L2 Error %: 0.68
+Cosine Similarity: 0.73
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78F'), np.str_('DBS78I')]
+L2 Error % 0.69
+Cosine Similarity 0.72
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78F'), np.str_('DBS78I')]
+L2 Error % 0.69
+Cosine Similarity 0.72
+
+#################### Final Composition #################################
+[np.str_('DBS78F'), np.str_('DBS78I')]
+L2 Error % 0.69
+Cosine Similarity 0.72
+####################################### Composition After Add-Remove #######################################
+   DBS78F  DBS78I
+0    17.0     7.0
+L2 Error %: 0.69
+Cosine Similarity: 0.72
+
+
+
+
+
+                    ################ Sample 12 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78B  DBS78D  DBS78E
+0     8.0     2.0    71.0     6.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78B  DBS78D  DBS78E
+0     8.0     2.0    71.0     6.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('DBS78A'), np.str_('DBS78D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   DBS78A  DBS78D
+0    12.0    75.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 13 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78E  DBS78F  DBS78I
+0     1.0     5.0    29.0     3.0
+L2 Error %: 0.38
+Cosine Similarity: 0.92
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78E  DBS78F  DBS78I
+0     1.0     5.0    29.0     3.0
+L2 Error %: 0.38
+Cosine Similarity: 0.92
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78F')]
+L2 Error % 0.39
+Cosine Similarity 0.92
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78E'), np.str_('DBS78F')]
+L2 Error % 0.39
+Cosine Similarity 0.92
+
+#################### Final Composition #################################
+[np.str_('DBS78E'), np.str_('DBS78F')]
+L2 Error % 0.39
+Cosine Similarity 0.92
+####################################### Composition After Add-Remove #######################################
+   DBS78E  DBS78F
+0     5.0    33.0
+L2 Error %: 0.39
+Cosine Similarity: 0.92
+
+
+
+
+
+                    ################ Sample 14 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78B  DBS78E  DBS78I  DBS78J  DBS78K
+0    10.0    28.0    13.0    16.0    23.0     4.0
+L2 Error %: 0.35
+Cosine Similarity: 0.94
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78B  DBS78E  DBS78I  DBS78J  DBS78K
+0    10.0    28.0    13.0    16.0    23.0     4.0
+L2 Error %: 0.35
+Cosine Similarity: 0.94
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78J')]
+L2 Error % 0.36
+Cosine Similarity 0.93
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78J')]
+L2 Error % 0.36
+Cosine Similarity 0.93
+
+#################### Final Composition #################################
+[np.str_('DBS78B'), np.str_('DBS78E'), np.str_('DBS78I'), np.str_('DBS78J')]
+L2 Error % 0.36
+Cosine Similarity 0.93
+####################################### Composition After Add-Remove #######################################
+   DBS78B  DBS78E  DBS78I  DBS78J
+0    34.0    19.0    14.0    27.0
+L2 Error %: 0.36
+Cosine Similarity: 0.93
+
+
+
+
+
+                    ################ Sample 15 #################
+############################# Initial Composition ####################################
+   DBS78A  DBS78C  DBS78D  DBS78G
+0    61.0     1.0     2.0    15.0
+L2 Error %: 0.18
+Cosine Similarity: 0.98
+############################## Composition After Initial Remove ###############################
+   DBS78A  DBS78C  DBS78D  DBS78G
+0    61.0     1.0     2.0    15.0
+L2 Error %: 0.18
+Cosine Similarity: 0.98
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78G')]
+L2 Error % 0.18
+Cosine Similarity 0.98
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78A'), np.str_('DBS78G')]
+L2 Error % 0.18
+Cosine Similarity 0.98
+
+#################### Final Composition #################################
+[np.str_('DBS78A'), np.str_('DBS78G')]
+L2 Error % 0.18
+Cosine Similarity 0.98
+####################################### Composition After Add-Remove #######################################
+   DBS78A  DBS78G
+0    62.0    17.0
+L2 Error %: 0.18
+Cosine Similarity: 0.98
+
+
+
+
+
+                    ################ Sample 16 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78F  DBS78G
+0    95.0     2.0     7.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78F  DBS78G
+0    95.0     2.0     7.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78G')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78G')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('DBS78C'), np.str_('DBS78G')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   DBS78C  DBS78G
+0    96.0     8.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 17 #################
+############################# Initial Composition ####################################
+   DBS78J
+0    16.0
+L2 Error %: 0.68
+Cosine Similarity: 0.73
+############################## Composition After Initial Remove ###############################
+   DBS78J
+0    16.0
+L2 Error %: 0.68
+Cosine Similarity: 0.73
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78J')]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78J')]
+L2 Error % 0.68
+Cosine Similarity 0.73
+
+#################### Final Composition #################################
+[np.str_('DBS78J')]
+L2 Error % 0.68
+Cosine Similarity 0.73
+####################################### Composition After Add-Remove #######################################
+   DBS78J
+0    16.0
+L2 Error %: 0.68
+Cosine Similarity: 0.73
+
+
+
+
+
+                    ################ Sample 18 #################
+############################# Initial Composition ####################################
+   DBS78I  DBS78L
+0     7.0     1.0
+L2 Error %: 0.71
+Cosine Similarity: 0.7
+############################## Composition After Initial Remove ###############################
+   DBS78I  DBS78L
+0     7.0     1.0
+L2 Error %: 0.71
+Cosine Similarity: 0.7
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78I')]
+L2 Error % 0.72
+Cosine Similarity 0.7
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78I')]
+L2 Error % 0.72
+Cosine Similarity 0.7
+
+#################### Final Composition #################################
+[np.str_('DBS78I')]
+L2 Error % 0.72
+Cosine Similarity 0.7
+####################################### Composition After Add-Remove #######################################
+   DBS78I
+0     8.0
+L2 Error %: 0.72
+Cosine Similarity: 0.7
+
+
+
+
+
+                    ################ Sample 19 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78F  DBS78G  DBS78J  DBS78L
+0     1.0     1.0     7.0     1.0     3.0
+L2 Error %: 0.75
+Cosine Similarity: 0.66
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78F  DBS78G  DBS78J  DBS78L
+0     1.0     1.0     7.0     1.0     3.0
+L2 Error %: 0.75
+Cosine Similarity: 0.66
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78G'), np.str_('DBS78L')]
+L2 Error % 0.76
+Cosine Similarity 0.66
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78G'), np.str_('DBS78L')]
+L2 Error % 0.76
+Cosine Similarity 0.66
+
+#################### Final Composition #################################
+[np.str_('DBS78G'), np.str_('DBS78L')]
+L2 Error % 0.76
+Cosine Similarity 0.66
+####################################### Composition After Add-Remove #######################################
+   DBS78G  DBS78L
+0     9.0     4.0
+L2 Error %: 0.76
+Cosine Similarity: 0.66
+
+
+
+
+
+                    ################ Sample 20 #################
+############################# Initial Composition ####################################
+   DBS78C  DBS78G  DBS78K
+0    12.0     4.0     4.0
+L2 Error %: 0.46
+Cosine Similarity: 0.89
+############################## Composition After Initial Remove ###############################
+   DBS78C  DBS78G  DBS78K
+0    12.0     4.0     4.0
+L2 Error %: 0.46
+Cosine Similarity: 0.89
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78G'), np.str_('DBS78K')]
+L2 Error % 0.46
+Cosine Similarity 0.89
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78C'), np.str_('DBS78G'), np.str_('DBS78K')]
+L2 Error % 0.46
+Cosine Similarity 0.89
+
+#################### Final Composition #################################
+[np.str_('DBS78C'), np.str_('DBS78G'), np.str_('DBS78K')]
+L2 Error % 0.46
+Cosine Similarity 0.89
+####################################### Composition After Add-Remove #######################################
+   DBS78C  DBS78G  DBS78K
+0    12.0     4.0     4.0
+L2 Error %: 0.46
+Cosine Similarity: 0.89
+
+
+
+
+
+                    ################ Sample 21 #################
+############################# Initial Composition ####################################
+   DBS78B  DBS78I  DBS78K
+0    11.0     4.0     3.0
+L2 Error %: 0.51
+Cosine Similarity: 0.86
+############################## Composition After Initial Remove ###############################
+   DBS78B  DBS78I  DBS78K
+0    11.0     4.0     3.0
+L2 Error %: 0.51
+Cosine Similarity: 0.86
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.51
+Cosine Similarity 0.86
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('DBS78B'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.51
+Cosine Similarity 0.86
+
+#################### Final Composition #################################
+[np.str_('DBS78B'), np.str_('DBS78I'), np.str_('DBS78K')]
+L2 Error % 0.51
+Cosine Similarity 0.86
+####################################### Composition After Add-Remove #######################################
+   DBS78B  DBS78I  DBS78K
+0    11.0     4.0     3.0
+L2 Error %: 0.51
+Cosine Similarity: 0.86

@@ -1,0 +1,6 @@
+De novo extracted, Global NMF Signatures, L1 Error %, L2 Error %, KL Divergence, Cosine Similarity, Correlation
+Signature 78-A, Signature DBS2 (39.76%) & Signature DBS4 (24.76%) & Signature DBS13 (35.48%), 44.25,  24.43, 0.319, 0.97, 0.97
+Signature 78-B, Signature DBS2 (23.90%) & Signature DBS6 (22.60%) & Signature DBS18 (53.50%), 54.78,  38.31, 0.343, 0.92, 0.91
+Signature 78-C, Signature DBS2 (19.28%) & Signature DBS6 (40.68%) & Signature DBS20 (40.04%), 71.92,  51.13, 0.544, 0.86, 0.82
+Signature 78-D, Signature DBS11 (61.54%) & Signature DBS13 (38.46%), 63.11,  34.13, 0.542, 0.94, 0.94
+Signature 78-E, Signature DBS2 (18.30%) & Signature DBS4 (28.04%) & Signature DBS13 (53.66%), 57.03,  41.62, 0.398, 0.91, 0.89

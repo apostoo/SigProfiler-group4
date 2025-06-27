@@ -1,0 +1,113 @@
+THIS FILE CONTAINS THE METADATA ABOUT SYSTEM AND RUNTIME
+
+
+-------System Info-------
+Operating System Name: Windows
+Nodename: DESKTOP-1NC1Q2B
+Release: 10
+Version: 10.0.26100
+
+-------Python and Package Versions------- 
+Python Version: 3.11.11
+SigProfilerExtractor Version: 1.2.0
+SigProfilerPlotting Version: 1.4.1
+SigProfilerMatrixGenerator Version: 1.3.3
+SigProfilerAssignment Version: 0.2.0
+Pandas version: 2.2.3
+Numpy version: 2.2.5
+Scipy version: 1.15.2
+Scikit-learn version: 1.6.1
+
+--------------EXECUTION PARAMETERS--------------
+INPUT DATA
+	input_type: vcf
+	output: individual_lucia/wEg5
+	input_data: individual_lucia/exome_data/
+	reference_genome: GRCh37
+	context_types: SBS96,DBS78,ID83
+	exome: False
+NMF REPLICATES
+	minimum_signatures: 1
+	maximum_signatures: 5
+	NMF_replicates: 5
+NMF ENGINE
+	NMF_init: random
+	precision: single
+	matrix_normalization: gmm
+	resample: True
+	seeds: random
+	min_NMF_iterations: 100
+	max_NMF_iterations: 1,000
+	NMF_test_conv: 100
+	NMF_tolerance: 1e-15
+CLUSTERING
+	clustering_distance: cosine
+EXECUTION
+	cpu: 8; Maximum number of CPU is 8
+	gpu: False
+Solution Estimation
+	stability: 0.8
+	min_stability: 0.2
+	combined_stability: 1.0
+	allow_stability_drop: False
+COSMIC MATCH
+	opportunity_genome: GRCh37
+	cosmic_version: 3.4
+	nnls_add_penalty: 0.05
+	nnls_remove_penalty: 0.01
+	initial_remove_penalty: 0.05
+	export_probabilities: True
+	collapse_to_SBS96: True
+
+-------Analysis Progress------- 
+[2025-06-19 12:29:56] Analysis started: 
+
+##################################
+
+[2025-06-19 12:30:06] Analysis started for SBS96. Matrix size [96 rows x 21 columns]
+
+[2025-06-19 12:30:06] Normalization GMM with cutoff value set at 9600
+
+[2025-06-19 12:30:48] SBS96 de novo extraction completed for a total of 1 signatures! 
+Execution time:0:00:41
+
+[2025-06-19 12:31:31] SBS96 de novo extraction completed for a total of 2 signatures! 
+Execution time:0:00:43
+
+[2025-06-19 12:32:13] SBS96 de novo extraction completed for a total of 3 signatures! 
+Execution time:0:00:41
+
+[2025-06-19 12:32:56] SBS96 de novo extraction completed for a total of 4 signatures! 
+Execution time:0:00:43
+
+[2025-06-19 12:33:39] SBS96 de novo extraction completed for a total of 5 signatures! 
+Execution time:0:00:42
+
+##################################
+
+[2025-06-19 12:33:52] Analysis started for DBS78. Matrix size [78 rows x 18 columns]
+
+[2025-06-19 12:33:52] Normalization GMM with cutoff value set at 7800
+
+[2025-06-19 12:34:33] DBS78 de novo extraction completed for a total of 1 signatures! 
+Execution time:0:00:41
+
+[2025-06-19 12:35:15] DBS78 de novo extraction completed for a total of 2 signatures! 
+Execution time:0:00:41
+
+[2025-06-19 12:35:56] DBS78 de novo extraction completed for a total of 3 signatures! 
+Execution time:0:00:41
+
+[2025-06-19 12:36:39] DBS78 de novo extraction completed for a total of 4 signatures! 
+Execution time:0:00:43
+
+[2025-06-19 12:37:24] DBS78 de novo extraction completed for a total of 5 signatures! 
+Execution time:0:00:44
+Context ID is not available in the current vcf files
+
+[2025-06-19 12:37:30] Analysis ended: 
+
+-------Job Status------- 
+Analysis of mutational signatures completed successfully! 
+Total execution time: 0:07:33 
+Results can be found in:  individual_lucia/wEg5  folder

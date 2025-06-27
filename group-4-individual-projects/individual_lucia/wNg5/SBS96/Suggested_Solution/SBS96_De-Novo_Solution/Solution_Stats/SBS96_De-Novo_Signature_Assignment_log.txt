@@ -1,0 +1,688 @@
+
+
+
+
+
+                    ################ Sample 1 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    22.0   195.0   552.0   828.0    98.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    22.0   195.0   552.0   828.0    98.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 2 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   434.0  1498.0  1208.0   225.0  2506.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   434.0  1498.0  1208.0   225.0  2506.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 3 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   731.0  3081.0   431.0   945.0   151.0
+L2 Error %: 0.15
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   731.0  3081.0   431.0   945.0   151.0
+L2 Error %: 0.15
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 4 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   353.0  1565.0   868.0   300.0  1254.0
+L2 Error %: 0.1
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   353.0  1565.0   868.0   300.0  1254.0
+L2 Error %: 0.1
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 5 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   451.0  5891.0  1552.0   825.0  1210.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   451.0  5891.0  1552.0   825.0  1210.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 6 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1673.0  1288.0   467.0  2375.0
+L2 Error %: 0.09
+Cosine Similarity: 1.0
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1673.0  1288.0   467.0  2375.0
+L2 Error %: 0.09
+Cosine Similarity: 1.0
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.09
+Cosine Similarity 1.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.09
+Cosine Similarity 1.0
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.09
+Cosine Similarity 1.0
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1673.0  1288.0   467.0  2375.0
+L2 Error %: 0.09
+Cosine Similarity: 1.0
+
+
+
+
+
+                    ################ Sample 7 #################
+############################# Initial Composition ####################################
+   SBS96B  SBS96C  SBS96D  SBS96E
+0  4865.0  1653.0   365.0  1942.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96B  SBS96C  SBS96D  SBS96E
+0  4865.0  1653.0   365.0  1942.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96B  SBS96C  SBS96E
+0  4691.0  2099.0  2035.0
+L2 Error %: 0.14
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 8 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    24.0   329.0   844.0  1201.0   160.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    24.0   329.0   844.0  1201.0   160.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 9 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   448.0   406.0   415.0   811.0
+L2 Error %: 0.14
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   448.0   406.0   415.0   811.0
+L2 Error %: 0.14
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.14
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   448.0   406.0   415.0   811.0
+L2 Error %: 0.14
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 10 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96D
+0   136.0   303.0  1191.0
+L2 Error %: 0.24
+Cosine Similarity: 0.97
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96D
+0   136.0   303.0  1191.0
+L2 Error %: 0.24
+Cosine Similarity: 0.97
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.24
+Cosine Similarity 0.97
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.24
+Cosine Similarity 0.97
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96D
+0   136.0   303.0  1191.0
+L2 Error %: 0.24
+Cosine Similarity: 0.97
+
+
+
+
+
+                    ################ Sample 11 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0  1065.0   922.0   368.0  2764.0
+L2 Error %: 0.1
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0  1065.0   922.0   368.0  2764.0
+L2 Error %: 0.1
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D')]
+L2 Error % 0.11
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96D
+0  1091.0  1132.0  2896.0
+L2 Error %: 0.11
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 12 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0   773.0  5003.0  3600.0   509.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0   773.0  5003.0  3600.0   509.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96C
+0   753.0  4888.0  4244.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 13 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1352.0  1896.0  3528.0  2704.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1352.0  1896.0  3528.0  2704.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96D  SBS96E
+0  1352.0  1896.0  3528.0  2704.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 14 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   100.0  4567.0  2287.0  1005.0  1586.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0   100.0  4567.0  2287.0  1005.0  1586.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+                    ################ Sample 15 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96E
+0   597.0  3381.0  1638.0  2061.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96E
+0   597.0  3381.0  1638.0  2061.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96B'), np.str_('SBS96C'), np.str_('SBS96E')]
+L2 Error % 0.12
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96B  SBS96C  SBS96E
+0   597.0  3381.0  1638.0  2061.0
+L2 Error %: 0.12
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 16 #################
+############################# Initial Composition ####################################
+    SBS96A  SBS96C
+0  65024.0  1610.0
+L2 Error %: 0.02
+Cosine Similarity: 1.0
+############################## Composition After Initial Remove ###############################
+    SBS96A  SBS96C
+0  65024.0  1610.0
+L2 Error %: 0.02
+Cosine Similarity: 1.0
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A')]
+L2 Error % 0.02
+Cosine Similarity 1.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A')]
+L2 Error % 0.02
+Cosine Similarity 1.0
+
+#################### Final Composition #################################
+[np.str_('SBS96A')]
+L2 Error % 0.02
+Cosine Similarity 1.0
+####################################### Composition After Add-Remove #######################################
+    SBS96A
+0  66634.0
+L2 Error %: 0.02
+Cosine Similarity: 1.0
+
+
+
+
+
+                    ################ Sample 17 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   395.0   937.0   830.0  1567.0
+L2 Error %: 0.15
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   395.0   937.0   830.0  1567.0
+L2 Error %: 0.15
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.15
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.15
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.15
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   395.0   937.0   830.0  1567.0
+L2 Error %: 0.15
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 18 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   238.0   101.0   852.0   226.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   238.0   101.0   852.0   226.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.21
+Cosine Similarity 0.98
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.21
+Cosine Similarity 0.98
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96D'), np.str_('SBS96E')]
+L2 Error % 0.21
+Cosine Similarity 0.98
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96D  SBS96E
+0   251.0   930.0   236.0
+L2 Error %: 0.21
+Cosine Similarity: 0.98
+
+
+
+
+
+                    ################ Sample 19 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   559.0  2283.0  1493.0     4.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96C  SBS96D  SBS96E
+0   559.0  2283.0  1493.0     4.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96C'), np.str_('SBS96D')]
+L2 Error % 0.13
+Cosine Similarity 0.99
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96C  SBS96D
+0   560.0  2284.0  1495.0
+L2 Error %: 0.13
+Cosine Similarity: 0.99
+
+
+
+
+
+                    ################ Sample 20 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0  4663.0    36.0   708.0  1143.0
+L2 Error %: 0.05
+Cosine Similarity: 1.0
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D
+0  4663.0    36.0   708.0  1143.0
+L2 Error %: 0.05
+Cosine Similarity: 1.0
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96D')]
+L2 Error % 0.05
+Cosine Similarity 1.0
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 1 !!!!!!!!!!!!!!!!!!!!!!!!!
+Best Signature Composition [np.str_('SBS96A'), np.str_('SBS96D')]
+L2 Error % 0.05
+Cosine Similarity 1.0
+
+#################### Final Composition #################################
+[np.str_('SBS96A'), np.str_('SBS96D')]
+L2 Error % 0.05
+Cosine Similarity 1.0
+####################################### Composition After Add-Remove #######################################
+   SBS96A  SBS96D
+0  4915.0  1635.0
+L2 Error %: 0.05
+Cosine Similarity: 1.0
+
+
+
+
+
+                    ################ Sample 21 #################
+############################# Initial Composition ####################################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    93.0   180.0  1241.0   542.0   355.0
+L2 Error %: 0.19
+Cosine Similarity: 0.98
+############################## Composition After Initial Remove ###############################
+   SBS96A  SBS96B  SBS96C  SBS96D  SBS96E
+0    93.0   180.0  1241.0   542.0   355.0
+L2 Error %: 0.19
+Cosine Similarity: 0.98
+
+############################## Performing Add-Remove Step ##############################
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!! LAYER: 0 !!!!!!!!!!!!!!!!!!!!!!!!!

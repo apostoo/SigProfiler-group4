@@ -1,0 +1,5 @@
+Signatures,Stability (Avg Silhouette),Minimum Stability,Considerable Solution,P-value,Matrix Frobenius%,Mean Sample L1%,Maximum Sample L1%,Mean Sample L2%,Maximum Sample L2%,Mean Sample KL,Maximum Sample KL,Mean Cosine Distance,Max Cosine Distance,Mean Correlation,Minimum Correlation
+1,1.0,1.0,YES,4.41e-06,43.35%,77.4%,118.47%,95.42%,148.9,0.4932,1.0218,0.279,0.5,0.613,0.251
+2*,0.98,0.97,YES,2.63e-01,6.17%,49.98%,98.24%,45.21%,73.62,0.3038,0.7939,0.13,0.323,0.74,0.465
+3,0.81,0.7,YES,Most Stab Sigs,5.92%,44.51%,93.08%,42.26%,70.76,0.2701,0.747,0.108,0.293,0.786,0.525
+4,0.67,0.37,NO,N/A,5.54%,43.01%,91.86%,40.79%,67.06,0.2535,0.7018,0.098,0.258,0.807,0.591

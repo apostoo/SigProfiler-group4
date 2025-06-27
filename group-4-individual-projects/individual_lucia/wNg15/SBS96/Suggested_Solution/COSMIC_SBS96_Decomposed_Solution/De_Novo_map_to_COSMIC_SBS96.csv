@@ -1,0 +1,16 @@
+De novo extracted, Global NMF Signatures, L1 Error %, L2 Error %, KL Divergence, Cosine Similarity, Correlation
+Signature 96-A, Signature SBS1 (0.80%) & Signature SBS2 (52.70%) & Signature SBS5 (2.06%) & Signature SBS13 (44.44%), 12.49,  7.09, 0.032, 1.00, 1.00
+Signature 96-B, Signature SBS1 (5.68%) & Signature SBS2 (10.42%) & Signature SBS5 (42.96%) & Signature SBS13 (40.94%), 29.67,  19.77, 0.098, 0.98, 0.98
+Signature 96-C, Signature SBS1 (0.90%) & Signature SBS3 (63.00%) & Signature SBS5 (15.28%) & Signature SBS8 (20.82%), 26.79,  32.27, 0.067, 0.95, 0.77
+Signature 96-D, Signature SBS1 (3.74%) & Signature SBS3 (95.08%) & Signature SBS5 (1.18%), 44.78,  50.02, 0.212, 0.87, 0.50
+Signature 96-E, Signature SBS1 (1.02%) & Signature SBS5 (28.32%) & Signature SBS8 (21.42%) & Signature SBS36 (12.68%) & Signature SBS40a (36.56%), 29.18,  30.30, 0.079, 0.95, 0.88
+Signature 96-F, Signature SBS1 (0.22%) & Signature SBS5 (56.28%) & Signature SBS8 (43.50%), 32.55,  37.57, 0.108, 0.93, 0.76
+Signature 96-G, Signature SBS1 (1.30%) & Signature SBS2 (3.94%) & Signature SBS5 (50.10%) & Signature SBS8 (32.52%) & Signature SBS13 (12.14%), 29.14,  28.09, 0.071, 0.96, 0.90
+Signature 96-H, Signature SBS1 (4.04%) & Signature SBS3 (78.32%) & Signature SBS13 (17.64%), 38.66,  35.15, 0.146, 0.94, 0.87
+Signature 96-I, Signature SBS1 (5.30%) & Signature SBS2 (10.20%) & Signature SBS5 (18.60%) & Signature SBS13 (25.58%) & Signature SBS40a (40.32%), 24.80,  19.37, 0.068, 0.98, 0.97
+Signature 96-J, Signature SBS1 (8.70%) & Signature SBS5 (59.00%) & Signature SBS8 (20.84%) & Signature SBS34 (11.46%), 31.58,  33.50, 0.101, 0.94, 0.85
+Signature 96-K, Signature SBS1 (27.04%) & Signature SBS5 (22.34%) & Signature SBS18 (16.26%) & Signature SBS40a (34.36%), 22.48,  17.45, 0.057, 0.98, 0.98
+Signature 96-L, Signature SBS1 (6.52%) & Signature SBS5 (49.84%) & Signature SBS8 (26.80%) & Signature SBS41 (16.84%), 33.80,  36.37, 0.103, 0.93, 0.76
+Signature 96-M, Signature SBS1 (11.76%) & Signature SBS2 (15.44%) & Signature SBS5 (14.44%) & Signature SBS13 (4.96%) & Signature SBS40a (53.40%), 27.59,  22.07, 0.074, 0.98, 0.96
+Signature 96-N, Signature SBS1 (4.54%) & Signature SBS3 (43.66%) & Signature SBS40a (51.80%), 35.97,  38.84, 0.109, 0.92, 0.81
+Signature 96-O, Signature SBS1 (5.76%) & Signature SBS3 (46.20%) & Signature SBS5 (48.04%), 39.82,  43.70, 0.142, 0.90, 0.62
