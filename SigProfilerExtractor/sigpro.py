@@ -54,6 +54,7 @@ from SigProfilerAssignment import single_sample as spasub
 from SigProfilerAssignment import decomposition as decomp
 from numpy.random import SeedSequence
 from sigProfilerPlotting import sigProfilerPlotting as sigPlot
+from pathlib import Path
 
 MUTTYPE = "MutationType"
 
@@ -270,6 +271,11 @@ def sigProfilerExtractor(
     allow_stability_drop=False,
     get_all_signature_matrices=False,
     volume=None,
+    use_ssnmf=True,
+    modelNum=1,
+    label_pattern="prefix",
+    custom_label_mapping=None,
+    lam=0.5,
 ):
     """
     Extracts mutational signatures from an array of samples.
@@ -507,6 +513,11 @@ def sigProfilerExtractor(
         "combined_stability": combined_stability,
         "allow_stability_drop": allow_stability_drop,
         "get_all_signature_matrices": get_all_signature_matrices,
+        "use_ssnmf": use_ssnmf,
+        "modelNum": modelNum,
+        "label_pattern": label_pattern,
+        "custom_label_mapping": custom_label_mapping,
+        "lam": lam,
     }
 
     ################################ take the inputs from the general optional arguments ####################################
@@ -775,6 +786,66 @@ def sigProfilerExtractor(
             colnames = genomes.columns
             allcolnames = colnames.copy()  # save the allcolnames for the final results
 
+            # Y-matrix generation logic - executed immediately after getting sample names
+            if use_ssnmf and execution_parameters.get('modelNum', 1) in [3, 4, 5, 6]:
+                try:
+                    print(f"\n[Y-Matrix] Starting Y-matrix generation for supervised SSNMF.")
+                    
+                    # Collect VCF file list
+                    vcf_files = []
+                    if os.path.isdir(input_data):
+                        # Scan all VCF files if it is a directory
+                        for ext in ['*.vcf', '*.vcf.gz']:
+                            vcf_files.extend(Path(input_data).glob(ext))
+                        vcf_files = [str(f) for f in vcf_files]
+                    else:
+                        # If it is a single file
+                        vcf_files = [input_data]
+                    
+                    print(f"[Y-Matrix] Found {len(vcf_files)} VCF files in {input_data}.")
+                    
+                    # Generate Y-matrix
+                    pattern_type = execution_parameters.get('label_pattern', 'first_two_chars')
+                    custom_mapping = execution_parameters.get('custom_label_mapping', None)
+                    
+                    Y_matrix, unique_labels, file_to_label_mapping = sub.generate_Y_matrix(
+                        vcf_files, 
+                        pattern_type=pattern_type,
+                        custom_mapping=custom_mapping
+                    )
+                    
+                    # Save Y-matrix
+                    y_output_dir = os.path.join(out_put, "Y_matrices")
+                    sub.save_Y_matrix(
+                        Y_matrix, 
+                        unique_labels, 
+                        file_to_label_mapping, 
+                        y_output_dir,
+                        filename_prefix=f"Y_matrix_{mutation_type}"
+                    )
+                    
+                    # Add Y-matrix and sample information to execution_parameters
+                    execution_parameters['Y'] = Y_matrix
+                    execution_parameters['unique_labels'] = unique_labels
+                    execution_parameters['file_to_label_mapping'] = file_to_label_mapping
+                    
+                    # Store original column names for later dimension matching
+                    execution_parameters['original_columns_before_filtering'] = allcolnames.copy()
+                    
+                    # Store retained column names after filtering
+                    execution_parameters['retained_columns_after_filtering'] = colnames.copy()
+                    print(f"[Y-Matrix] {len(allcolnames) - len(colnames)} samples filtered out. {len(colnames)} samples retained.")
+                    
+                    print(f"[Y-Matrix] Y-matrix generated with shape: {Y_matrix.shape}")
+                    print(f"[Y-Matrix] Label classes: {unique_labels}")
+                    
+                except Exception as e:
+                    print(f"[Y-Matrix] Warning: Y-matrix generation failed: {str(e)}")
+                    print(f"[Y-Matrix] Falling back to unsupervised NMF mode.")
+                    # Fallback to unsupervised mode if Y-matrix generation fails
+                    execution_parameters['modelNum'] = 1
+                    use_ssnmf = False
+
         # check if start and end processes are bigger than the number of samples
         startProcess = min(startProcess, genomes.shape[1])
         endProcess = min(endProcess, genomes.shape[1])
@@ -931,7 +1002,7 @@ def sigProfilerExtractor(
                 for i in range(len(pooloutput)):
                     exposureAvg[:, i] = pooloutput[i][0]
                 stoc = time.time()
-                print("Optimization time is {} seconds".format(stoc - stic))
+                #print("Optimization time is {} seconds".format(stoc - stic))
             # Get total mutationation for each signature in reverse order and order the signatures from high to low mutation barden
             signature_total_mutations = np.sum(exposureAvg, axis=1).astype(int)
             sorted_idx = np.argsort(-signature_total_mutations)
@@ -1108,11 +1179,6 @@ def sigProfilerExtractor(
                     str(datetime.datetime.now()).split(".")[0], str(genome_build)
                 )
             )
-            print(
-                "The selected opportunity genome is "
-                + str(genome_build)
-                + ". COSMIC signatures are available only for GRCh37/38, mm9/10 and rn6 genomes. So, the opportunity genome is reset to GRCh37."
-            )
             sysdata.close()
             genome_build = "GRCh37"
 
@@ -1148,6 +1214,4 @@ def sigProfilerExtractor(
     )
     sysdata.close()
 
-    print(
-        "\n\n \nYour Job Is Successfully Completed! Thank You For Using SigProfilerExtractor.\n "
-    )
+    print(f"\nAnalysis complete. Results are in the '{out_put}' directory.\n")

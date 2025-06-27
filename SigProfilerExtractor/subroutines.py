@@ -413,19 +413,94 @@ def BootstrapCancerGenomes(genomes, seed=None):
 def pnmf(
     batch_generator_pair=[1, None],
     genomes=1,
-    totalProcesses=1,
+    totalProcesses=2,
     resample=True,
     init="nndsvd",
     normalization_cutoff=10000000,
     norm="log2",
     gpu=False,
     execution_parameters=None,
+    use_ssnmf=True,  # SSNMF
 ):
     tic = time.time()
     totalMutations = np.sum(genomes, axis=0)
     genomes = pd.DataFrame(genomes)  # creating/loading a dataframe/matrix
 
-    # generators used for noise and matrix initialization
+    # Ensure execution_parameters contains totalProcesses
+    if execution_parameters is None:
+        execution_parameters = {}
+    execution_parameters['totalProcesses'] = totalProcesses
+
+    # If using SSNMF
+    if use_ssnmf:
+        try:
+            print(f"\n[SSNMF] Processing for {totalProcesses} signatures...")
+            
+            # Data preprocessing
+            if resample:
+                # Resample each sample individually
+                bootstrapGenomes = np.zeros_like(genomes.values)
+                for i in range(genomes.shape[1]):  # Iterate over each sample
+                    n = int(totalMutations[i])  # Get total mutations for the current sample
+                    p = genomes.values[:, i] / n  # Calculate probability distribution for the current sample
+                    bootstrapGenomes[:, i] = np.random.multinomial(n, p)
+                
+                bootstrapGenomes = pd.DataFrame(
+                    bootstrapGenomes,
+                    index=genomes.index,
+                    columns=genomes.columns
+                )
+            else:
+                bootstrapGenomes = genomes
+
+            # Data cleaning and normalization
+            bootstrapGenomes[bootstrapGenomes < 0.0001] = 0.0001
+            bootstrapGenomes = bootstrapGenomes.astype(float)
+            totalMutations = np.sum(bootstrapGenomes, axis=0)
+            bootstrapGenomes = normalize_samples(
+                bootstrapGenomes,
+                totalMutations,
+                norm=norm,
+                normalization_cutoff=normalization_cutoff,
+            )
+
+            # Convert to SSNMF format
+            data_array, original_index, original_columns = convert_to_ssnmf_format(
+                bootstrapGenomes, 
+                use_gpu=gpu
+            )
+
+            # Map parameters
+            ssnmf_params = map_parameters_to_ssnmf(execution_parameters)
+            
+            # Validate k parameter
+            if ssnmf_params['k'] != totalProcesses:
+                print(f"Warning: SSNMF k parameter ({ssnmf_params['k']}) differs from totalProcesses ({totalProcesses}). Adjusting k.")
+                ssnmf_params['k'] = totalProcesses
+
+            # Add column name info to support dimension matching
+            ssnmf_params['current_columns'] = original_columns  # Column names for the current sample
+            ssnmf_params['original_columns'] = execution_parameters.get('original_columns_before_filtering', None)
+            ssnmf_params['retained_columns'] = execution_parameters.get('retained_columns_after_filtering', None)
+
+            # Create and run the SSNMF model
+            model = create_ssnmf_model(data_array, ssnmf_params)
+            W, H, error = run_ssnmf_model(model, ssnmf_params)
+
+            W = np.array(W)
+            H = np.array(H)
+            total = W.sum(axis=0, keepdims=True)
+            W = W / total
+            H = H * total.T
+            H = denormalize_samples(H, totalMutations)
+
+            print(f"SSNMF process for {totalProcesses} signatures completed in {round(time.time() - tic, 2)} seconds.")
+            return W, H, error
+
+        except Exception as e:
+            print(f"SSNMF failed: {str(e)}")
+            raise
+
     poisson_generator = batch_generator_pair[1][0]
     rep_generator = batch_generator_pair[1][1]
     rand_rng = Generator(PCG64DXSM(rep_generator))
@@ -534,6 +609,7 @@ def parallel_runs(
     norm = execution_parameters["matrix_normalization"]
     gpu = execution_parameters["gpu"]
     batch_size = execution_parameters["batch_size"]
+    use_ssnmf = execution_parameters.get("use_ssnmf", False)  # ssnmf
 
     if verbose:
         print(
@@ -582,6 +658,7 @@ def parallel_runs(
             norm=norm,
             gpu=gpu,
             execution_parameters=execution_parameters,
+            use_ssnmf=use_ssnmf,  # use_ssnmf
         )
         result_list = pool.map(pool_nmf, batch_generator_pair)
         pool.close()
@@ -599,6 +676,7 @@ def parallel_runs(
             norm=norm,
             gpu=gpu,
             execution_parameters=execution_parameters,
+            use_ssnmf=use_ssnmf,  # ssnmf
         )
         result_list = pool.map(pool_nmf, batch_generator_pair)
         pool.close()
@@ -630,6 +708,12 @@ def decipher_signatures(
     dist = execution_parameters["dist"]
     norm = execution_parameters["matrix_normalization"]
     normalization_cutoff = execution_parameters["normalization_cutoff"]
+    
+    #ssnmf
+    # Ensure use_ssnmf parameter exists
+    if "use_ssnmf" not in execution_parameters:
+        execution_parameters["use_ssnmf"] = True  # Enable SSNMF by default
+    use_ssnmf = execution_parameters["use_ssnmf"]
 
     # poisson_generator is index 0, and random_generator is index 1
     replicate_generators = noise_rep_pair[:2]
@@ -640,10 +724,15 @@ def decipher_signatures(
         )
     )  # m is for the mutation context
 
-    if norm == "gmm":
-        print("The matrix normalizing cutoff is {}\n\n".format(normalization_cutoff))
+    if use_ssnmf:
+        print("Using SSNMF implementation.")
     else:
-        print("The matrix normalizing cutoff is set for {}\n\n".format(norm))
+        print("Using original NMF implementation.")
+
+    if norm == "gmm":
+        print("Matrix normalization cutoff is {}\n\n".format(normalization_cutoff))
+    else:
+        print("Matrix normalization is set to {}\n\n".format(norm))
 
     ##############################################################################################################################################################################
     ############################################################# The parallel processing takes place here #######################################################################
@@ -1935,7 +2024,14 @@ def stabVsRError(
     # put * in the selected solution
     index = data.index.astype(int)
     index = list(index.astype(str))
+    # solution = get_indeces(index, [str(alternative_solution)])[0]
+    available_indices_as_int = [int(i) for i in index]
+    alternative_solution = min(available_indices_as_int)
+    
+    # Now, we look up the solution using a value that is guaranteed to be in the index.
+    # The str() conversion is necessary because index is a list of strings.
     solution = get_indeces(index, [str(alternative_solution)])[0]
+    # print("There is no signature over the thresh-hold stability. We are selecting the lowest possible number of signatures.")
     index[solution] = index[solution] + "*"
     data.index = index
 
@@ -2047,3 +2143,386 @@ def custom_signatures_plot(signatures, output):
             pdf.attach_note("signature plots")
             pdf.savefig()
             plt.close()
+
+
+#ssnmf
+import numpy as np
+import pandas as pd
+import torch
+from ssnmf.src.ssnmf import SSNMF
+
+def map_parameters_to_ssnmf(sigprofiler_params):
+    """
+    Maps SigProfiler parameters to SSNMF parameters.
+    Supports additional parameters (Y, B, L, lam, W) and raises an error if Y is required but not provided.
+    """
+    # Ensure k parameter matches totalProcesses
+    k = sigprofiler_params.get('totalProcesses', sigprofiler_params.get('NMF_rank', 2))
+    modelNum = sigprofiler_params.get('modelNum', 1)
+    
+    # Basic parameter mapping
+    ssnmf_params = {
+        'k': k,
+        'modelNum': modelNum,
+        'tol': sigprofiler_params.get('NMF_tolerance', 1e-4),
+        'numiters': sigprofiler_params.get('NMF_max_iter', 1000),
+        'eps': 1e-10,
+    }
+    
+    # Initialization method mapping
+    init_method = sigprofiler_params.get('NMF_init', 'nndsvd')
+    if init_method == 'nndsvd':
+        ssnmf_params['init'] = 'nndsvd'
+    else:
+        ssnmf_params['init'] = 'random'
+    
+    # GPU related parameters
+    if sigprofiler_params.get('gpu', False):
+        ssnmf_params['device'] = 'cuda' if torch.cuda.is_available() else 'cpu'
+    else:
+        ssnmf_params['device'] = 'cpu'
+    
+    # Pass additional parameters (Y, B, L, lam, W)
+    for key in ['Y', 'B', 'L', 'lam', 'W']:
+        if key in sigprofiler_params:
+            ssnmf_params[key] = sigprofiler_params[key]
+    
+    # Check: if Y is required but not passed, raise an error
+    if modelNum in [3, 4, 5, 6]:
+        print(f"\n[SSNMF] Supervised model detected (modelNum={modelNum}). Checking for Y matrix.")
+        if 'Y' not in ssnmf_params or ssnmf_params['Y'] is None:
+            raise ValueError(f"modelNum={modelNum} requires the label matrix Y, but it was not provided.")
+        else:
+            print(f"[SSNMF] Y matrix found with shape: {ssnmf_params['Y'].shape}")
+    else:
+        print(f"\n[SSNMF] Unsupervised model detected (modelNum={modelNum}).")
+    
+    return ssnmf_params
+
+def create_ssnmf_model(data, params):
+    """
+    Creates an SSNMF model instance, supporting additional parameters (Y, B, L, lam, W).
+    Adjusts Y-matrix dimensions to match X-matrix dynamically.
+    """
+    print("\n[SSNMF] Creating SSNMF model...")
+    
+    # Dynamically assemble parameters
+    model_kwargs = {
+        'X': data,
+        'k': params['k'],
+        'modelNum': params['modelNum'],
+        'tol': params['tol']
+    }
+    
+    # Handle Y-matrix dimension matching
+    if 'Y' in params and params['Y'] is not None:
+        original_Y = params['Y']
+        X_cols = data.shape[1]
+        Y_cols = original_Y.shape[1]
+        
+        if X_cols != Y_cols:
+            print(f"[SSNMF] Dimension mismatch detected (X samples: {X_cols}, Y labels: {Y_cols}). Adjusting Y matrix.")
+            
+            # Get sample name info if available
+            retained_columns = params.get('retained_columns', None)
+            original_columns = params.get('original_columns', None)
+            
+            if retained_columns is not None and original_columns is not None:
+                # Method 1: Adjust Y using column name mapping
+                try:
+                    retained_indices = [list(original_columns).index(col) for col in retained_columns if col in original_columns]
+                    
+                    if len(retained_indices) == X_cols:
+                        adjusted_Y = original_Y[:, retained_indices]
+                        print(f"[SSNMF] Y matrix adjusted based on column names. New shape: {adjusted_Y.shape}")
+                        model_kwargs['Y'] = adjusted_Y
+                    else:
+                        print(f"[SSNMF] Warning: Column mapping failed to resolve dimension mismatch. Falling back to truncation.")
+                        adjusted_Y = original_Y[:, :X_cols]
+                        model_kwargs['Y'] = adjusted_Y
+                except Exception as e:
+                    print(f"[SSNMF] Warning: Column name mapping for Y matrix failed: {str(e)}. Falling back to truncation.")
+                    adjusted_Y = original_Y[:, :X_cols]
+                    model_kwargs['Y'] = adjusted_Y
+            else:
+                # Method 2: Simple truncation/padding
+                if Y_cols > X_cols:
+                    adjusted_Y = original_Y[:, :X_cols]
+                    print(f"[SSNMF] Y matrix truncated to match X. New shape: {adjusted_Y.shape}")
+                    model_kwargs['Y'] = adjusted_Y
+                else:
+                    print(f"[SSNMF] Warning: Y matrix has fewer columns ({Y_cols}) than X ({X_cols}). Padding with zeros.")
+                    if isinstance(original_Y, torch.Tensor):
+                        padding = torch.zeros(original_Y.shape[0], X_cols - Y_cols, 
+                                            dtype=original_Y.dtype, device=original_Y.device)
+                        adjusted_Y = torch.cat([original_Y, padding], dim=1)
+                    else:
+                        padding = np.zeros((original_Y.shape[0], X_cols - Y_cols))
+                        adjusted_Y = np.concatenate([original_Y, padding], axis=1)
+                    print(f"[SSNMF] Y matrix padded to match X. New shape: {adjusted_Y.shape}")
+                    model_kwargs['Y'] = adjusted_Y
+        else:
+            model_kwargs['Y'] = original_Y
+    
+    # Handle other related parameters
+    for key in ['B', 'L', 'lam', 'W']:
+        if key in params:
+            model_kwargs[key] = params[key]
+    
+    # Create model instance
+    from ssnmf.src.ssnmf import SSNMF
+    model = SSNMF(**model_kwargs)
+    print("[SSNMF] Model created successfully.")
+    return model
+
+def run_ssnmf_model(model, params):
+    """
+    Runs the SSNMF model.
+    
+    Parameters:
+    model (SSNMF): An SSNMF model instance.
+    params (dict): Runtime parameters.
+    
+    Returns:
+    tuple: (W, H, error_info) where W and H are decomposition results, and error_info is an array of 7 error metrics.
+    """
+    # Run the model
+    errors = model.mult(
+        numiters=params['numiters'],
+        saveerrs=True,
+        eps=params['eps']
+    )
+    
+    # Get results
+    W = model.A
+    H = model.S
+    
+    # Create an array of 7 error metrics
+    error_info = np.zeros(7)
+    
+    # Process errors to get the final reconstruction error
+    final_error = 0.0
+    if errors is not None:
+        try:
+            # Flatten the error object (which can be a nested list/array) and get the last value
+            error_values = np.array(errors).flatten()
+            if error_values.size > 0:
+                final_error = float(error_values[-1])
+        except (TypeError, IndexError):
+            print(f"Warning: Could not extract final error from the 'errors' object: {errors}")
+            final_error = 0.0
+    
+    error_info[0] = final_error  # Final reconstruction error
+    error_info[1] = params['numiters']  # Number of iterations
+    error_info[2] = params['tol']  # Convergence tolerance
+    
+    return W, H, error_info
+
+def convert_to_ssnmf_format(data, use_gpu=False):
+    """
+    Converts SigProfiler data format to SSNMF format.
+    
+    Parameters:
+    data (pandas.DataFrame): Input data.
+    use_gpu (bool): Whether to use GPU.
+    
+    Returns:
+    tuple: (data_array, original_index, original_columns)
+    """
+    # Save original index and column names
+    original_index = data.index
+    original_columns = data.columns
+    
+    # Convert to numpy array
+    data_array = data.values
+    
+    # If using GPU, convert to torch tensor
+    if use_gpu and torch.cuda.is_available():
+        data_array = torch.from_numpy(data_array).float().cuda()
+    
+    return data_array, original_index, original_columns
+
+# Y-matrix generation and reading functions
+import os
+import re
+import json
+import pickle
+from pathlib import Path
+
+def extract_label_from_filename(filename, pattern_type='first_two_chars'):
+    """
+    Extracts a label from a filename.
+    
+    Parameters:
+    filename (str): Filename, e.g., 'BRCA_001.vcf'.
+    pattern_type (str): Extraction pattern:
+        - 'first_two_chars': extracts the first two characters (e.g., BRCA_001.vcf -> BR).
+        - 'prefix': extracts the prefix before the first '_' (e.g., BRCA_001.vcf -> BRCA).
+        - 'suffix': extracts the suffix after the last '_'.
+        - 'separator': uses the first separator.
+    
+    Returns:
+    str: The extracted label.
+    """
+    basename = os.path.basename(filename)
+    name_without_ext = os.path.splitext(basename)[0]
+    
+    if pattern_type == 'first_two_chars':
+        return name_without_ext[:2]
+    elif pattern_type == 'prefix':
+        return name_without_ext.split('_')[0]
+    elif pattern_type == 'suffix':
+        return name_without_ext.split('_')[-1]
+    elif pattern_type == 'separator':
+        return name_without_ext.split('_')[0]
+    else:
+        return name_without_ext
+
+def generate_Y_matrix(vcf_files, pattern_type='first_two_chars', custom_mapping=None):
+    """
+    Generates the Y label matrix.
+    
+    Parameters:
+    vcf_files (list): List of VCF file paths.
+    pattern_type (str): Label extraction pattern, default is 'first_two_chars'.
+    custom_mapping (dict): Custom mapping from filenames to labels.
+    
+    Returns:
+    tuple: (Y_matrix, unique_labels, file_to_label_mapping)
+    """
+    # 1. Establish filename-to-label mapping
+    file_to_label = {}
+    
+    if custom_mapping:
+        file_to_label = custom_mapping.copy()
+    else:
+        for vcf_file in vcf_files:
+            label = extract_label_from_filename(vcf_file, pattern_type)
+            file_to_label[os.path.basename(vcf_file)] = label
+
+    # 2. Get all unique labels
+    unique_labels = sorted(list(set(file_to_label.values())))
+    
+    # 3. Build Y-matrix
+    Y = np.zeros((len(unique_labels), len(vcf_files)))
+    
+    # 4. Populate Y-matrix
+    for i, vcf_file in enumerate(vcf_files):
+        basename = os.path.basename(vcf_file)
+        if basename in file_to_label:
+            label = file_to_label[basename]
+            if label in unique_labels:
+                label_idx = unique_labels.index(label)
+                Y[label_idx, i] = 1
+    
+    return Y, unique_labels, file_to_label
+
+def save_Y_matrix(Y_matrix, unique_labels, file_to_label_mapping, output_dir, filename_prefix="Y_matrix"):
+    """
+    Saves the Y-matrix and its metadata to files.
+    
+    Parameters:
+    Y_matrix (np.ndarray): The Y label matrix.
+    unique_labels (list): List of unique labels.
+    file_to_label_mapping (dict): Mapping from files to labels.
+    output_dir (str): Output directory.
+    filename_prefix (str): Prefix for the output files.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # 1. Save Y-matrix as a numpy file
+    y_matrix_file = os.path.join(output_dir, f"{filename_prefix}.npy")
+    np.save(y_matrix_file, Y_matrix)
+    
+    # 2. Save metadata as a JSON file
+    try:
+        labels_info = {
+            'unique_labels': unique_labels,
+            'file_to_label_mapping': file_to_label_mapping,
+            'matrix_shape': list(Y_matrix.shape),
+            'creation_time': str(pd.Timestamp.now())
+        }
+        labels_file = os.path.join(output_dir, f"{filename_prefix}_info.json")
+        with open(labels_file, 'w', encoding='utf-8') as f:
+            json.dump(labels_info, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"[Y-Matrix Save] Warning: Failed to save label info: {str(e)}")
+        labels_file = None
+    
+    # 3. Save Y-matrix as a CSV for easy inspection
+    try:
+        y_csv_file = os.path.join(output_dir, f"{filename_prefix}.csv")
+        y_df = pd.DataFrame(Y_matrix, index=unique_labels)
+        y_df.to_csv(y_csv_file)
+    except Exception as e:
+        print(f"[Y-Matrix Save] Warning: Failed to save as CSV: {str(e)}")
+        y_csv_file = None
+    
+    return y_matrix_file, labels_file, y_csv_file
+
+def load_Y_matrix(output_dir, filename_prefix="Y_matrix"):
+    """
+    Loads the Y-matrix and metadata from files.
+    
+    Parameters:
+    output_dir (str): Directory containing the files.
+    filename_prefix (str): Prefix of the files.
+    
+    Returns:
+    tuple: (Y_matrix, unique_labels, file_to_label_mapping)
+    """
+    # 1. Load Y-matrix
+    y_matrix_file = os.path.join(output_dir, f"{filename_prefix}.npy")
+    if not os.path.exists(y_matrix_file):
+        raise FileNotFoundError(f"Y-matrix file not found: {y_matrix_file}")
+    
+    Y_matrix = np.load(y_matrix_file)
+    
+    # 2. Load metadata
+    labels_file = os.path.join(output_dir, f"{filename_prefix}_info.json")
+    if not os.path.exists(labels_file):
+        raise FileNotFoundError(f"Label info file not found: {labels_file}")
+    
+    with open(labels_file, 'r', encoding='utf-8') as f:
+        labels_info = json.load(f)
+    
+    unique_labels = labels_info['unique_labels']
+    file_to_label_mapping = labels_info['file_to_label_mapping']
+    
+    return Y_matrix, unique_labels, file_to_label_mapping
+
+def create_Y_matrix_from_vcf_directory(vcf_dir, output_dir, pattern_type='first_two_chars', custom_mapping=None, filter_unmatched=True):
+    """
+    Creates a Y-matrix from a VCF directory (standalone utility).
+    
+    Parameters:
+    vcf_dir (str): Directory with VCF files.
+    output_dir (str): Output directory.
+    pattern_type (str): Label extraction pattern.
+    custom_mapping (dict): Custom filename-to-label mapping.
+    filter_unmatched (bool): Whether to filter VCF files not in sample list (default True).
+    
+    Returns:
+    tuple: (Y_matrix, unique_labels, file_to_label_mapping)
+    """
+    # 1. Collect VCF files
+    vcf_files = []
+    for ext in ['*.vcf', '*.vcf.gz']:
+        vcf_files.extend(Path(vcf_dir).glob(ext))
+    vcf_files = [str(f) for f in vcf_files]
+    
+    if not vcf_files:
+        raise ValueError(f"No VCF files found in directory {vcf_dir}")
+    
+    # 2. Generate sample names (from filenames)
+    sample_names = [os.path.basename(f) for f in vcf_files]
+    
+    # 3. Generate Y-matrix
+    Y_matrix, unique_labels, file_to_label_mapping = generate_Y_matrix(
+        vcf_files, sample_names, pattern_type, custom_mapping, filter_unmatched
+    )
+    
+    # 4. Save Y-matrix
+    save_Y_matrix(Y_matrix, unique_labels, file_to_label_mapping, output_dir)
+    
+    return Y_matrix, unique_labels, file_to_label_mapping
