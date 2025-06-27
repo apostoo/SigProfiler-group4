@@ -69,6 +69,8 @@ def run_vcf():
         min_nmf_iterations=100,
         max_nmf_iterations=1000,
         nmf_test_conv=100,
+        use_ssnmf=True,
+        modelNum=1,
     )
 
 
@@ -147,13 +149,47 @@ def run_csv():
     )
 
 
+def run_supervised_vcf():
+    """
+    Test the VCF processing functionality of supervised SSNMF.
+    It will generate the Y matrix and save it to the Y_matrices directory.
+    """
+    vcf_data = sig.importdata("vcf")
+    sig.sigProfilerExtractor(
+        "vcf",
+        "test_supervised_vcf_output",
+        vcf_data,
+        minimum_signatures=4,
+        maximum_signatures=4,
+        nmf_replicates=50,
+        min_nmf_iterations=100,
+        max_nmf_iterations=1000,
+        nmf_test_conv=100,
+        # Supervised SSNMF parameters
+        use_ssnmf=True,
+        modelNum=3,  # Frobenius + Frobenius supervised model
+        label_pattern="first_two_chars",  # Extract labels from file name prefixes
+        lam=0.1,  # Supervised learning weight parameter, controlling the importance of the label term in the objective function
+        # Optional: custom label mapping
+        # custom_label_mapping={
+        #     "PD3851a.vcf": "BRCA",
+        #     "PD3890a.vcf": "LUAD",
+        #     "PD3904a.vcf": "LUAD",
+        #     "PD3905a.vcf": "BRCA",
+        #     "PD3945a.vcf": "BRCA"
+        # }
+    )
+
+
+
 if __name__ == "__main__":
-    run_matrix_96()
-    run_matrix_78()
-    run_matrix_83()
-    run_matrix_48()
-    run_matrix_32()
-    run_seg_48()
-    run_vcf()
+    # run_matrix_96()
+    # run_matrix_78()
+    # run_matrix_83()
+    # run_matrix_48()
+    # run_matrix_32()
+    # run_seg_48()
+    # run_vcf()  # Modified VCF test (unsupervised SSNMF)
+    run_supervised_vcf()  # Supervised SSNMF test (requires Y matrix)
     # run_matobj()
     # run_csv()
